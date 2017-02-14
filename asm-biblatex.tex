@@ -16,13 +16,24 @@
 %
 % This work consists of the file asm-biblatex.tex
 %%%
-%%% 
+%% Description: 
+%%%
 %%% This file provides the biblatex style for the format of journals of
 %%% American Society for Microbiology (ASM)
 %%% http://jb.asm.org/site/misc/journal-ita_org.xhtml#04
 %%% This work builds on the input from:
 %%% http://tex.stackexchange.com/questions/156094/biblatex-citation-style-asm
-
+%%%
+%% Usage:
+%%%
+%% in the main document add the lines in the preamble:
+%%%  \input{asm-biblatex.tex}
+%%%  \bibliography{yourbibfile}
+%% compile as:
+%%%  pdflatex yourmainfile.tex
+%%%  biber yourmainfile
+%%%  pdflatex yourmainfile.tex
+%%%
 
 \usepackage[style=numeric, subentry, sorting=none, backend=biber, firstinits=true, terseinits=true, url=false, doi=true, isbn=false, maxbibnames=999, eprint=false]{biblatex}
 

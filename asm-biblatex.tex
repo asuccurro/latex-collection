@@ -38,10 +38,9 @@
 \usepackage[style=numeric, subentry, sorting=none, backend=biber, firstinits=true, terseinits=true, url=false, doi=true, isbn=false, maxbibnames=999, eprint=false]{biblatex}
 
 \DeclareFieldFormat{labelnumberwidth}{#1\adddot}
-\DeclareNameAlias{default}{last-first}
+\DeclareNameAlias{default}{family-given}
 \renewcommand*{\revsdnamepunct}{}
 \renewcommand*{\finalnamedelim}{\multinamedelim}
-
 
 %Get rid of quotation marks around titles
 \DeclareFieldFormat[article, book, patent, thesis, unpublished]{title}{#1\isdot}
@@ -49,13 +48,14 @@
 \DeclareFieldFormat{booktitle}{#1}
 
 %have vol:pag for article
-\DeclareFieldFormat[article]{volume}{#1\addcolon}
-\DeclareFieldFormat[article]{pages}{\addcolon#1}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inbook, incollection, inproceedings]{pages}{p #1}
+\renewcommand*{\bibpagespunct}{\ifentrytype{article}{\addcolon}{\addcomma\space}}
 
 %No ``in'' for articles, italic In for the rest
+\renewcommand*{\intitlepunct}{\space}
 \renewbibmacro{in:}{
- \ifentrytype{article}{}
- {\printtext{{\itshape In}\space}}
+ \ifentrytype{article}{}{\printtext[emph]{\bibstring{in}\intitlepunct}}
 }
 
 % Append the year to the author/editor macros
@@ -102,7 +102,9 @@
     \newunit\newblock
     \printfield{pages}
     \newunit\newblock
-    \usebibmacro{byeditor+booktitle+publisher}%
+    \usebibmacro{byeditor+booktitle}%
+    \newunit\newblock
+    \usebibmacro{publisher+location}%
     \finentry}
 
 \DeclareBibliographyDriver{book}{%
@@ -113,17 +115,27 @@
     \usebibmacro{publisher+location}%
     \finentry}
 
-\renewbibmacro*{byeditor+booktitle+publisher}{
-  \usebibmacro{in:}\ifnameundef{editor}{}{\printnames{editor}\space(ed),\space}%
-    \printfield{booktitle}\adddot\space%
-    \printlist{publisher}%
-    \iflistundef{location}{\adddot}{\addcomma\space}%
-    \printlist{location}%
+\renewbibmacro*{byeditor+booktitle}{
+    \ifentrytype{book}{
+        \usebibmacro{in:}\ifnameundef{editor}{}{\printnames{editor}\space(ed),\space}%
+        \printfield{booktitle}\adddot\space%
+    }{}
+    \ifentrytype{incollection}{
+        \usebibmacro{in:}\ifnameundef{editor}{}{\printnames{editor}\space(ed),\space}%
+        \printfield{booktitle}\adddot\space%
+    }{}
 }
                
 \renewbibmacro*{publisher+location}{
-    \printlist{publisher}%
-    \iflistundef{location}{\adddot}{\addcomma\space}%
-    \printlist{location}%
+    \ifentrytype{book}{
+        \printlist{publisher}%
+        \iflistundef{location}{\adddot}{\addcomma\space}%
+        \printlist{location}%
+    }{}
+    \ifentrytype{incollection}{
+        \printlist{publisher}%
+        \iflistundef{location}{\adddot}{\addcomma\space}%
+        \printlist{location}%
+    }{}
 }
                

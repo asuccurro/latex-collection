@@ -1,0 +1,160 @@
+%% Copyright 2018 Antonella Succurro
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `unmaintained'.
+% 
+% This work consists of the files template_form_53_05.tex, settings_form_53_05.tex and dfgbibstyle.bst
+%
+% Description: LaTeX template for DFG proposals
+
+
+\documentclass[11pt]{article}
+\input{settings_form_53_05}
+
+%\linenumbers
+\def\mytitle{My project title}
+
+
+\begin{document}
+
+\begin{center}
+{\bf \Large Project Description – Emmy Noether Programme}\\
+First name  last name, city\\
+\textbf{\mytitle}
+\end{center}
+\hrule
+
+\vskip2ex
+
+\noindent
+{\bf  \Large Project Description}
+
+\textcolor{red}{This template and the associated files are made available {\bfseries at no warranty of compliance to DFG rules}.
+  ALWAYS refer to the DFG official Proposal Preparation Instructions. These are the settings I used for my own proposal and they comply
+  to DFG rules {\bfseries at the best of my knowledge}, by using these files you do so at your own risk and assume full responsibility.}
+
+\begin{table}[b!]
+\fbox{\parbox{.98\textwidth}{$^{(1)}$ Own previous work is referenced in the text as [X$^{\oplus}$], other researchers' work as [Y].
+}}
+\includegraphics[width=1.\textwidth]{dfg_footer_page1.pdf}
+\end{table}
+
+\vspace{-1ex}
+\vspace{-1ex}\section{State of the art and preliminary work$^{(1)}$}
+\textcolor{red}{N.B. The choice to distinguish between citing my work as~\citeme{Succurro2017} and others' as~\cite{Widder2016} it's MY OWN CHOICE, not  specifically requested in the template. Refer to the DFG official Proposal Preparation Instructions if in doubt.}
+
+\vspace{-1ex}\subsection{Project-related publications}
+
+\vspace{-1ex}\subsubsection{Articles published by outlets with scientific quality assurance, book publications, and works accepted for publication but not yet published.}
+\vspace{-1ex} Example list of PUBLISHED/ACCEPTED WORKS ONLY.
+
+\makeatletter
+\renewcommand\@biblabel[1]{}
+\makeatother
+
+\input{list-ref-1.tex}
+
+\vspace{-1ex}\subsubsection{Other publications}
+\vspace{-1ex}  Example list of OTHER PUBLISHED WORKS (e.g. software on github qualifies).
+\input{list-ref-2.tex}
+
+\vspace{-1ex}\subsubsection{Patents } 
+
+\section{Objectives and work programme}
+
+\vspace{-1ex}\subsection{Anticipated total duration of the project}
+
+\vspace{-1ex}\subsection{Objectives}
+
+\vspace{-1ex}\paragraph{Research goal.}
+
+\vspace{-1ex}\subsection{Work programme incl. proposed research methods}
+
+\vspace{-1ex}\subsection{Justification for the choice of host institution(s)}
+
+\vspace{-1ex}\subsection{Data handling}
+
+\vspace{-1ex}\subsection{Other information}
+
+\vspace{-1ex}\subsection{Descriptions of proposed investigations involving experiments on humans, human materials or animals}
+
+\vspace{-1ex}\subsection{Information on scientific and financial involvement of international cooperation partners}
+
+\vspace{-1ex}\section{Bibliography}
+
+{\footnotesize\vskip-8ex\setlength{\bibsep}{0.0pt}
+\makeatletter
+\renewcommand\@biblabel[1]{[#1]}
+\makeatother
+
+\bibliography{refs-example}
+}
+
+\vspace{-1ex}\section{Requested modules/funds}
+
+\vspace{-1ex}\subsection{Emmy Noether Junior Research Group Leader}
+
+\vspace{-1ex}\subsection{Basic Module}
+
+\vspace{-1ex}\subsubsection{Funding for Staff}
+
+\vspace{-2ex}\subsubsection{Direct Project Costs}
+
+\vspace{-1ex}\subsubsection*{4.2.2.1 Equipment up to Euro 10,000, Software and Consumables}
+
+\vspace{-2ex}\subsubsection*{4.2.2.2 Travel Expenses}
+
+\vspace{-2ex}\subsubsection*{4.2.2.3 Visiting Researchers (excluding Mercator Fellows) }
+
+\vspace{-1ex}\subsubsection*{4.2.2.4 Expenses for Laboratory Animals }
+
+
+\vspace{-1ex}\subsubsection*{4.2.2.5 Other Costs}
+
+\vspace{-1ex}\subsubsection*{4.2.2.6 Project-related publication expenses}
+
+\vspace{-1ex}\subsubsection{Instrumentation}
+
+\vspace{-1ex}\subsubsection*{4.2.3.1 Equipment exceeding Euro 10,000 }
+\vspace{-1ex}\subsubsection*{4.2.3.2 Major Instrumentation exceeding Euro 50,000 }
+
+\vspace{-1ex}\subsection{Module Temporary Clinician Substitute }
+
+\vspace{-1ex}\subsection{Module Mercator Fellows }
+
+\vspace{-1ex}\subsection{Module Workshop Funding}
+
+\vspace{-1ex}\subsection{Module Public Relations Funding}
+
+\vspace{-1ex}\subsection{Module Family Allowance }
+
+\vspace{-1ex}\section{Project requirements}
+
+\vspace{-1ex}\subsection{Employment status information}
+
+\vspace{-1ex}\subsection{First-time proposal data}
+
+\vspace{-1ex}\subsection{Composition of the project group}
+
+\vspace{-1ex}\subsection{Cooperation with other researchers}
+
+\vspace{-1ex}\subsubsection{Researchers with whom you have agreed to cooperate on this project}
+
+\vspace{-1ex}\subsubsection{Researchers with whom you have collaborated scientifically within the past three years}
+
+\vspace{-1ex}\subsection{Scientific equipment}
+
+\vspace{-1ex}\subsection{Project-relevant cooperation with commercial enterprises}
+
+\vspace{-1ex}\subsection{Project-relevant participation in commercial enterprises}
+
+\vspace{-1ex}\section{Additional information}
+
+\end{document}

@@ -1,0 +1,126 @@
+%% Copyright 2018 Antonella Succurro
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `unmaintained'.
+% 
+% This work consists of the files template_form_53_05.tex, settings_form_53_05.tex and dfgbibstyle.bst
+%
+% Description: LaTeX template for DFG proposals
+
+\usepackage{geometry}
+\geometry{a4paper,
+left=2.5cm,
+right=2cm,
+top=2.5cm,
+bottom=2cm,
+bmargin=1.8cm}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{slashed}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[scaled=1.005]{uarial}
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{pict2e}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{enumerate}
+\usepackage{subfigure}
+%\usepackage{subfig}
+\usepackage{wrapfig}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows,calc,fit}
+
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,.65}
+\definecolor{darkgreen}{rgb}{0.28,0.41,0.19}
+\usepackage[%
+  pdfauthor={Name},%
+  pdfstartview=FitH,%
+  breaklinks=true,%
+  bookmarks=true,%
+  colorlinks=true,%
+  linkcolor= darkblue,
+  anchorcolor=black,%
+  citecolor=darkgreen,
+  filecolor=black,%
+  menucolor=black,%
+  urlcolor=darkblue%
+  ]{hyperref}
+%\usepackage{hyperref}
+%\definecolor{links}{rgb}{0,0,1}
+%\hypersetup{colorlinks=true,linkcolor=,urlcolor=links}
+
+\usepackage{lipsum}
+
+\usepackage{calc}
+
+\newcommand \fancyquote[2] {
+\begin{minipage}[t]{.1\textwidth}\centering
+\vspace{0pt}
+
+\includegraphics[width=.8\textwidth]{gray-quotation-marks-md.png}
+
+\end{minipage}\begin{minipage}[t]{.9\textwidth}
+\vspace{0pt}
+{#1}
+\flushright {#2}\\
+\parbox{\widthof{#2}}{\hrulefill}
+\end{minipage}
+}
+
+
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{eurosym}
+\usepackage[numbers,sort]{natbib}
+
+\bibliographystyle{dfgbibstyle}
+
+\def\fixme{\textbf{\color{red}FIXME}}
+
+\newcommand{\citeme}[1]{[\citenum{#1}$^\oplus$]}
+
+%%\usepackage{biblatex}
+%%\bibliography{emmy}
+\usepackage{lineno}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\renewcommand{\headrulewidth}{.5pt}% header rule
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{\scriptsize page \thepage\ of \pageref*{LastPage}}
+\fancyhead[L]{\scriptsize DFG form 53.05 -- 03/18}
+\fancyfoot{} 
+%\fancyhead[C]{\textsc{Project Description}}
+\fancyhead[C]{\scriptsize \mytitle}
+
+\usepackage{sectsty}
+\sectionfont{\large}
+\subsectionfont{\normalsize}
+%\usepackage{titlesec}
+%\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+            
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
